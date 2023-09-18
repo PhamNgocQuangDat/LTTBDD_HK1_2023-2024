@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>BMI 03 </title>
+</head>
+
+<body>
+    <script>
+        var teamDolphins = (96 + 108 + 89) / 3;
+        var teamKoalas = (88 + 91 + 110) / 3;
+
+        console.log('Team Dolphins: ' + teamDolphins + ' \n' +
+            'Team Koalas: ' + teamKoalas + ' \n'
+        );
+
+        if (teamDolphins > teamKoalas) {
+            console.log('Team Dolphins is winning');
+        } else if (teamKoalas > teamDolphins) {
+            console.log('Team Koalas is winning');
+        } else if (teamDolphins === teamKoalas) {
+            console.log('Team Dolphins  are tied for winning');
+        } else {
+            console.log('They are all tied for winning \n\n');
+        }
+
+        /*  Data Bonus 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123 
+            Include a requirement for a minimum score of 100. With this rule, a
+    team only wins if it has a higher score than the other team, and the same time a
+    score of at least 100 points. Hint: Use a logical operator to test for minimum
+    score, as well as multiple else-if blocks 
+
+        */
+
+        console.log(`BONUS 1`);
+
+        var teamDolphins1 = (97 + 112 + 101) / 3;
+        var teamKoalas1 = (109 + 95 + 106) / 3;
+
+        console.log('Team Dolphins: ' + teamDolphins1 + ' \n' +
+            'Team Koalas: ' + teamKoalas1 + ' \n'
+        );
+
+
+
+        const minimumscore = 100;
+        let teamWinner = null;
+
+        if (teamDolphins1 >= minimumscore && teamKoalas1 >= minimumscore) {
+            if (teamDolphins1 > teamKoalas1) {
+                teamWinner = 'Dolphins';
+            } else if (teamKoalas1 > teamDolphins1) {
+                teamWinner = 'Koalas';
+            } else {
+                teamWinner = 'Draw';
+            }
+        } else {
+            teamWinner = 'No winner (no minimum score)';
+        }
+
+        if (teamWinner === 'Draw') {
+            console.log(`Peace! Both teams have the same number of points.`);
+        } else if (teamWinner) {
+            console.log(`${teamWinner} winer!`);
+        } else {
+            console.log(`There is no winner. Did not meet the minimum score requirement.`);
+        }
+
+
+        /*  Bonus 2: Minimum score also applies to a draw! So a draw only happens when
+both teams have the same score and both have a score greater or equal 100
+points. Otherwise, no team wins the trophy
+ */
+    </script>
+</body>
+
+</html>
